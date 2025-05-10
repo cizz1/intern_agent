@@ -120,6 +120,19 @@ with st.sidebar:
     except FileNotFoundError:
         log_placeholder.text("No logs available yet.")
 
+    # Display knowledge base files
+    st.header("Knowledge Base Files")
+    try:
+        knowledge_files = [f for f in os.listdir(knowledge_folder) if f.endswith(('.txt', '.pdf'))]
+        if knowledge_files:
+            st.markdown("**Loaded Files:**")
+            for file in knowledge_files:
+                st.write(f"- {file}")
+        else:
+            st.write("No text or PDF files found in ./knowledge directory.")
+    except FileNotFoundError:
+        st.write("Knowledge directory not found. Please create ./knowledge and add files.")
+
 # Main input and output
 user_input = st.text_input("Ask me anything", "")
 if user_input:
