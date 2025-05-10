@@ -1,0 +1,8 @@
+langchain
+langchain-google-genai
+langchain-community
+streamlit
+faiss-cpu
+sentence-transformers
+python-dotenv
+requests
